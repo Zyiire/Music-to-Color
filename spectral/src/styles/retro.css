@@ -1,0 +1,316 @@
+/* ============================================================
+   Spectral — retro.css
+   Early-2000s UI kit: brushed metal, beveled edges, inset fields.
+   Shared across SpotifySearch, Visualizer, and Gallery.
+   ============================================================ */
+
+   :root {
+    --retro-font: "Tahoma", "Geneva", "Segoe UI", sans-serif;
+  
+    --retro-metal-light: #dfdfe6;
+    --retro-metal-dark: #b8b8c4;
+    --retro-metal-border: #6a6a78;
+  
+    --retro-title-light: #4a5d8f;
+    --retro-title-dark: #2d3a5e;
+    --retro-title-edge: #1a2238;
+  
+    --retro-select-light: #3d6bb5;
+    --retro-select-dark: #2d5499;
+  
+    --retro-text: #1a1a24;
+    --retro-text-muted: #6a6a78;
+    --retro-label: #3a3a48;
+  
+    --retro-green-light: #7dd87d;
+    --retro-green-dark: #3a9e3a;
+    --retro-green-border: #2a7a2a;
+  }
+  
+  /* ---------- Window shell ---------- */
+  .retro-window {
+    font-family: var(--retro-font);
+    background: linear-gradient(180deg, var(--retro-metal-light) 0%, var(--retro-metal-dark) 100%);
+    border-radius: 7px;
+    border: 1px solid var(--retro-metal-border);
+    box-shadow: inset 0 1px 0 #ffffff, 0 2px 5px rgba(0, 0, 0, 0.35);
+    overflow: hidden;
+  }
+  
+  /* ---------- Title bar ---------- */
+  .retro-titlebar {
+    background: linear-gradient(180deg, var(--retro-title-light) 0%, var(--retro-title-dark) 100%);
+    padding: 6px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--retro-title-edge);
+    user-select: none;
+  }
+  
+  .retro-titlebar-label {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    color: #eef2ff;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 0.3px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+  }
+  
+  .retro-led {
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, #8fd6ff, #1d6fb5);
+    border: 1px solid #0d3a63;
+  }
+  
+  .retro-titlebar-controls {
+    display: flex;
+    gap: 4px;
+  }
+  
+  .retro-titlebar-btn {
+    width: 15px;
+    height: 14px;
+    background: linear-gradient(180deg, #e8e8ee, #b0b0bc);
+    border: 1px solid var(--retro-metal-border);
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  /* ---------- Body ---------- */
+  .retro-body {
+    padding: 14px;
+  }
+  
+  .retro-label {
+    font-size: 10px;
+    color: var(--retro-label);
+    margin-bottom: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  /* ---------- Inset field (carved-in look) ---------- */
+  .retro-inset {
+    background: #ffffff;
+    border: 2px solid;
+    border-color: #7a7a88 #d8d8e0 #d8d8e0 #7a7a88;
+    border-radius: 2px;
+    box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.2);
+  }
+  
+  .retro-search-row {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 14px;
+  }
+  
+  .retro-search-field {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 8px;
+  }
+  
+  .retro-search-field input {
+    border: none;
+    outline: none;
+    background: transparent;
+    font-family: var(--retro-font);
+    font-size: 12px;
+    color: var(--retro-text);
+    width: 100%;
+  }
+  
+  .retro-search-field input::placeholder {
+    color: #aaa;
+  }
+  
+  /* ---------- Buttons ---------- */
+  .retro-btn {
+    background: linear-gradient(180deg, #f0f0f5 0%, #c2c2cc 100%);
+    border: 1px solid var(--retro-metal-border);
+    border-radius: 3px;
+    padding: 0 12px;
+    font-size: 11px;
+    font-weight: bold;
+    color: #2a2a38;
+    cursor: pointer;
+    box-shadow: inset 0 1px 0 #ffffff;
+    font-family: var(--retro-font);
+  }
+  
+  .retro-btn:active {
+    background: linear-gradient(180deg, #c2c2cc 0%, #f0f0f5 100%);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
+  }
+  
+  .retro-btn:disabled {
+    opacity: 0.5;
+    cursor: default;
+  }
+  
+  .retro-btn-primary {
+    background: linear-gradient(180deg, var(--retro-green-light) 0%, var(--retro-green-dark) 100%);
+    border: 1px solid var(--retro-green-border);
+    border-radius: 3px;
+    padding: 5px 14px;
+    font-size: 11px;
+    font-weight: bold;
+    color: #ffffff;
+    cursor: pointer;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+    font-family: var(--retro-font);
+  }
+  
+  .retro-btn-primary:active {
+    background: linear-gradient(180deg, var(--retro-green-dark) 0%, var(--retro-green-light) 100%);
+  }
+  
+  .retro-btn-primary:disabled {
+    opacity: 0.5;
+    cursor: default;
+  }
+  
+  /* ---------- Results list ---------- */
+  .retro-results {
+    overflow: hidden;
+  }
+  
+  .retro-result-row {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 7px 9px;
+    background: #ffffff;
+    cursor: pointer;
+    border-top: 1px solid #e4e4ec;
+  }
+  
+  .retro-result-row:first-child {
+    border-top: none;
+  }
+  
+  .retro-result-row:nth-child(even) {
+    background: #f4f4f8;
+  }
+  
+  .retro-result-row.selected {
+    background: linear-gradient(180deg, var(--retro-select-light), var(--retro-select-dark));
+  }
+  
+  .retro-result-art {
+    width: 32px;
+    height: 32px;
+    border-radius: 2px;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    flex-shrink: 0;
+    object-fit: cover;
+    background: linear-gradient(135deg, #ff9a3c, #d4537e);
+  }
+  
+  .retro-result-meta {
+    flex: 1;
+    min-width: 0;
+  }
+  
+  .retro-result-title {
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--retro-text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .retro-result-sub {
+    font-size: 10px;
+    color: var(--retro-text-muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .retro-result-row.selected .retro-result-title {
+    color: #ffffff;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+  }
+  
+  .retro-result-row.selected .retro-result-sub {
+    color: #cdd9f0;
+  }
+  
+  .retro-result-icon {
+    font-size: 14px;
+    color: #9a9aa8;
+    flex-shrink: 0;
+  }
+  
+  .retro-result-row.selected .retro-result-icon {
+    color: #ffffff;
+  }
+  
+  /* ---------- Footer / status bar ---------- */
+  .retro-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 13px;
+    padding-top: 11px;
+    border-top: 1px solid #9a9aa8;
+  }
+  
+  .retro-footer-text {
+    font-size: 10px;
+    color: var(--retro-label);
+  }
+  
+  .retro-statusbar {
+    background: linear-gradient(180deg, #c8c8d2, #a8a8b4);
+    border-top: 1px solid #8a8a96;
+    padding: 3px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .retro-statusbar span {
+    font-size: 9px;
+    color: var(--retro-label);
+  }
+  
+  /* ---------- Loading spinner (retro hourglass vibe) ---------- */
+  .retro-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 20px;
+    font-size: 11px;
+    color: var(--retro-label);
+  }
+  
+  .retro-spinner {
+    width: 14px;
+    height: 14px;
+    border: 2px solid #9a9aa8;
+    border-top-color: var(--retro-select-dark);
+    border-radius: 50%;
+    animation: retro-spin 0.7s linear infinite;
+  }
+  
+  @keyframes retro-spin {
+    to { transform: rotate(360deg); }
+  }

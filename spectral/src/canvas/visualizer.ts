@@ -3,7 +3,6 @@ import { detectBeat } from '../audio/beat-detector'
 import { mapBandsToColor } from '../color/palette-mapper'
 import { toHex, lerpOKLCH, type OKLCHColor } from '../color/oklch'
 import type { PaletteSpec } from '../color/palette-mapper'
-import type { AnalyserNode } from '../audio/AudioEngine'
 
 let rafId: number
 let currentColor: OKLCHColor = { l: 0.5, c: 0.1, h: 240 }
