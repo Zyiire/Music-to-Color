@@ -39,7 +39,7 @@ export function Gallery({ items }: Props) {
   }
 
   return (
-    <div className="retro-window" style={{ maxWidth: 760, margin: '16px auto 0' }}>
+    <div className="retro-window">
       <div className="retro-titlebar">
         <div className="retro-titlebar-label">
           <span className="retro-led" />

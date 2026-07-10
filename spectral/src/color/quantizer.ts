@@ -8,9 +8,12 @@ export function extractPalette(canvas: HTMLCanvasElement, count = 5): string[] {
     const pixels: [number, number, number][] = []
   
     for (let i = 0; i < data.length; i += 16) {
+      // Skip the near-black backdrop so the palette reflects the loop itself.
+      if (data[i] + data[i + 1] + data[i + 2] < 60) continue
       pixels.push([data[i], data[i + 1], data[i + 2]])
     }
-  
+    if (pixels.length < count) return []
+
     const map = quantize(pixels, count)
     return map ? map.palette().map(([r, g, b]) =>
       formatHex({ mode: 'rgb', r: r/255, g: g/255, b: b/255 }) ?? '#000'

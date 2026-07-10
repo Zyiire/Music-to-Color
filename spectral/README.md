@@ -7,7 +7,7 @@
 ![React 19](https://img.shields.io/badge/React-19-61DAFB?logo=react)
 ![TypeScript](https://img.shields.io/badge/TypeScript-6-3178C6?logo=typescript)
 
-Spectral analyzes music — live from your mic, an uploaded file, or a Spotify track — and generates a perceptually accurate color palette you can drop straight into Figma, CSS, or Tailwind. The colors aren't random: they're derived from the actual frequency content of the audio using OKLCH color math, with Claude handling the mood-to-palette reasoning.
+Spectral analyzes music — live from your mic or a Spotify track — and generates a perceptually accurate color palette you can drop straight into Figma, CSS, or Tailwind. The colors aren't random: they're derived from the actual frequency content of the audio using OKLCH color math, with Claude handling the mood-to-palette reasoning.
 
 ---
 
@@ -43,7 +43,7 @@ Most music visualizers are purely reactive — they flash colors at you but don'
 
 ## Features
 
-- **Two audio input paths** — live microphone or file upload via Web Audio API, or Spotify track lookup via Audio Features API
+- **Two audio input paths** — live microphone via Web Audio API, or Spotify track lookup via Audio Features API
 - **Real-time FFT visualization** — 2048-point FFT split into bass, mid, and high bands driving a canvas animation at ~60fps
 - **Beat detection** — energy peak threshold on the bass band triggers saturation pulses
 - **OKLCH color mapping** — perceptually uniform color model with exponential moving average smoothing to prevent jitter
@@ -151,7 +151,7 @@ extend: { colors: { primary: '#1a0a2e', accent: '#7c3aed' } }
 ```
 spectral/src/
 ├── audio/
-│   ├── AudioEngine.ts       # AudioContext setup, mic and file source nodes
+│   ├── AudioEngine.ts       # AudioContext setup, mic source node
 │   ├── fft-analyzer.ts      # FFT band splitting (bass / mid / high)
 │   └── beat-detector.ts     # Energy peak threshold beat detection
 ├── color/
